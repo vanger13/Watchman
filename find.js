@@ -1,7 +1,7 @@
 var wordList = null;
 chrome.storage.local.get('wordList', function (result) {
     wordList = result.wordList;
-    if (wordList != null) {
+    if (wordList != null && wordList.length > 0) {
         var words = wordList.split(" ");
         var count = 0;
         $(document).contents ().each (function processNodes () {
